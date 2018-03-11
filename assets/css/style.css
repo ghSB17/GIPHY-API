@@ -1,0 +1,26 @@
+.styleH {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 8px solid red;
+    border-radius: 15px;
+    padding: 1%;
+}
+
+.clsButton {
+    width: 100%;
+    margin: .25%;
+
+}
+
+.clsImgDiv {
+    float: left;
+    padding: 1%;
+}
+
+.clsButtonStyle{
+    background-color: blue;
+}
+
+/* .clsImage {
+    width: 85%;
+    height:90%;
+} */
