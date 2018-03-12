@@ -1,16 +1,18 @@
 $(document).ready(function(){
 
-var Shows= ["The Office","Parks And Recreation","Modern Family","30 Rock","The Big Bang Theory","How I Met Your Mother","Seinfeld","Curb Your Enthusiasm","Everybody Loves Raymond"]
+var topicsList= ["The Office","Parks And Recreation","Modern Family","30 Rock","The Big Bang Theory","How I Met Your Mother","Seinfeld","Curb Your Enthusiasm","Everybody Loves Raymond","Friday"]
 
 function initializeScreen(){
     $("#idButtonDiv").empty();
-    for(var i=0; i<Shows.length; i++){
+    for(var i=0; i<topicsList.length; i++){
         var newButton=$("<button>");
-        newButton.attr("data-Name",Shows[i]);
+        newButton.attr("data-Name",topicsList[i]);
         newButton.addClass("clsButton");
-        newButton.html(Shows[i]);
+        newButton.html(topicsList[i]);
         $("#idButtonDiv").prepend(newButton);
     }
+    $("#idGiphysDiv").empty();
+    loadGiphys(topicsList[topicsList.length-1]);
 
 };
 
@@ -18,7 +20,7 @@ $("#idAdd").on("click", function() {
 
     event.preventDefault();
     if( $("#ShowInput").val() != '' ) {
-      Shows.push($("#ShowInput").val());
+      topicsList.push($("#ShowInput").val());
       $("#ShowInput").val("");
       initializeScreen();
     }
@@ -28,11 +30,18 @@ $("#idAdd").on("click", function() {
 $("#idButtonDiv").on("click", ".clsButton", function(){
 
     $("#idGiphysDiv").empty();
-    var ShowName=$(this).attr("data-Name");
-    console.log(ShowName);
+    var topicName=$(this).attr("data-Name");
+    console.log(topicName);
+    loadGiphys(topicName);
+
+});
+
+function loadGiphys(Topic) {
+
     var urlQuery="https://api.giphy.com/v1/gifs/search?api_key=KiVEF6W3QTHfd9TNRHBloP3o0NqTMqas&q="+
-    ShowName+"&limit=10&offset=0&rating=G&lang=en";
+    Topic +"&limit=10&offset=0&rating=G&lang=en";
     console.log(urlQuery);
+    
     $.ajax({
         url: urlQuery,
         method: "GET"
@@ -67,7 +76,7 @@ $("#idButtonDiv").on("click", ".clsButton", function(){
             }
     });
 
-});
+}
 
 $("#idGiphysDiv").on("click",".clsImage",function() {
 
