@@ -1,14 +1,37 @@
+body {
+   align-content: center;
+}
+
 .styleH {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    border: 8px solid red;
+    padding: 5%;
+    border: 8px solid #307D7E;
     border-radius: 15px;
-    padding: 1%;
+    background:  linear-gradient( #4C787E,#81D8D0,#48CCCD,#43BFC7,#307D7E); 
+    /* background:  linear-gradient( #4C787E,#7DFDFE,#307D7E);  */
+    
+}
+.sytleTitle {
+    font-family: 'Bungee Inline', cursive;
+    background: transparent;
+    text-align: center;
+    font-size:600%;
+    margin: 0%;
+    padding: 0%;
+}
+
+.styleBG {
+    margin: 2%;
+    padding: 2%;
+    border: 8px solid #78C7C7;
+    border-radius: 20px;
+    /* background:linear-gradient( #7E354D,#7D0582,#800517,#7F525D) */
 }
 
 .clsButton {
     width: 100%;
-    margin: .25%;
-
+    margin: 3%;
+    
 }
 
 .clsImgDiv {
@@ -20,7 +43,7 @@
     background-color: blue;
 }
 
-/* .clsImage {
+.clsImage {
     width: 85%;
-    height:90%;
-} */
+    /* height:90%; */
+} 
